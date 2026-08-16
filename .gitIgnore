@@ -1,0 +1,10 @@
+# Local Python environment
+.venv/
+# Python cache / bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+ 
+# Streamlit cache
+.streamlit/
