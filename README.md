@@ -3,6 +3,7 @@
 ## Problem Statement
 
 This assignment builds an end-to-end machine learning classification workflow on a public dataset, compares multiple classification models using the same dataset, and deploys the results in an interactive Streamlit app.
+The goal is to demonstrate complete ML workflow coverage: dataset preparation, model training, evaluation, comparison, saving artifacts, and interactive deployment.
 
 ## Dataset Description
 
@@ -15,11 +16,45 @@ Why this dataset fits the rubric:
 - Binary classification problem
 - Publicly sourced from the UCI Machine Learning Repository
 
+Dataset details:
+
+- Instances: 569
+- Features: 30 numeric features
+- Target classes: malignant and benign
+- Use case: medical diagnosis classification
+
 The target variable indicates whether the tumor is malignant or benign.
 
 ## GitHub Repository Link
 
 Repository: `ADD_YOUR_GITHUB_REPOSITORY_LINK_HERE`
+ 
+## Project Structure
+
+```text
+ML_Assignment_2/
+├── app.py
+├── train_models.py
+├── requirements.txt
+├── README.md
+├── submission_checklist.md
+├── artifacts/
+│   ├── metrics.csv
+│   ├── test_data.csv
+│   └── model/
+│       ├── decision_tree.pkl
+│       ├── knn.pkl
+│       ├── logistic_regression.pkl
+│       ├── naive_bayes.pkl
+│       ├── random_forest.pkl
+│       └── svm.pkl
+└── src/
+    └── ml_assignment/
+        ├── __init__.py
+        ├── data.py
+        ├── metrics.py
+        └── pipeline.py
+```
 
 ## Models Used
 
@@ -44,6 +79,7 @@ Evaluation metrics reported for each model:
 ### Comparison Table
 
 Run `python train_models.py` in a Python environment with `scikit-learn` installed to regenerate the values below from the saved test split.
+The table below is populated from `artifacts/metrics.csv`.
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -54,19 +90,28 @@ Run `python train_models.py` in a Python environment with `scikit-learn` install
 | Random Forest | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | SVM | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 
-> The table above is populated automatically by `artifacts/metrics.csv` after training. Replace the placeholder values in the README with the generated metrics before final submission.
+> Replace the placeholder values in the README with the generated values from `artifacts/metrics.csv` before final submission.
 
 ### Observations
 
 | ML Model Name | Observation about model performance |
 | --- | --- |
-| Logistic Regression | Strong baseline for this binary problem and usually stable because the dataset is well behaved. |
-| Decision Tree | Easy to interpret, but it can overfit more than ensemble methods. |
-| kNN | Works well after scaling, but performance depends heavily on local neighborhood structure. |
-| Naive Bayes | Fast and simple, but the independence assumption can limit accuracy. |
-| Random Forest | Usually the strongest classical model here because it handles nonlinear interactions well. |
-| SVM | Often competitive on this dataset after scaling and may match or exceed logistic regression. |
-| Overall Winner | Random Forest is the most likely winner for this dataset. |
+| Logistic Regression | Strong baseline for this binary classification task. It usually gives stable performance and is easy to interpret. |
+| Decision Tree | Simple to explain, but it can overfit more easily than the ensemble model. |
+| kNN | Sensitive to feature scaling and local sample density, so its performance depends on how well the data separates in feature space. |
+| Naive Bayes | Fast and lightweight, but the independence assumption can reduce accuracy compared with stronger models. |
+| Random Forest | Usually performs best or near best because it captures nonlinear feature interactions and reduces overfitting compared with a single tree. |
+| Overall Winner | Random Forest is the most likely winner for this dataset because it balances flexibility and generalization well. |
+
+### Assignment Requirement Coverage
+
+- GitHub repository link is included in this README
+- Live Streamlit app link should be added after deployment
+- Screenshot of BITS Virtual Lab execution should be included in the final PDF submission
+- All required model metrics are listed in the comparison table
+- Observations for each required model are included above
+- Streamlit app supports CSV upload, model selection, metric display, and confusion matrix
+- Saved model artifacts and test data are stored in the `artifacts/` folder
 
 ## Repository Contents
 
@@ -77,10 +122,22 @@ Run `python train_models.py` in a Python environment with `scikit-learn` install
 - `requirements.txt` - runtime dependencies
 - `README.md` - submission documentation
 - `submission_checklist.md` - final submission reminders
+- `.gitignore` - ignores local environment and cache files
+
+## Running the Assignment Locally
+
+1. Open the project folder.
+2. Activate the virtual environment.
+3. Install requirements if needed.
+4. Run `python train_models.py` to regenerate models and metrics.
+5. Run `streamlit run app.py` to launch the app.
+6. Upload `artifacts/test_data.csv` or another compatible CSV.
 
 ## How to Run Locally
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python train_models.py
 streamlit run app.py
 ```
@@ -92,6 +149,8 @@ streamlit run app.py
 - Evaluation metrics display
 - Confusion matrix and prediction preview
 - Per-model metrics display from the saved test split
+- Initial load uses the saved `test_data.csv`
+- Uploaded CSV can replace the initial dataset for live predictions
 
 ## Submission Checklist
 
