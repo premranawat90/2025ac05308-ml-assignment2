@@ -27,12 +27,12 @@ The target variable indicates whether the tumor is malignant or benign.
 
 ## GitHub Repository Link
 
-Repository: `ADD_YOUR_GITHUB_REPOSITORY_LINK_HERE`
+Repository: `https://github.com/premranawat90/2025ac05308-ml-assignment2/tree/main`
  
 ## Project Structure
 
 ```text
-ML_Assignment_2/
+2025ac05308-ml-assignment2/
 ├── app.py
 ├── train_models.py
 ├── requirements.txt
@@ -81,14 +81,15 @@ Evaluation metrics reported for each model:
 Run `python train_models.py` in a Python environment with `scikit-learn` installed to regenerate the values below from the saved test split.
 The table below is populated from `artifacts/metrics.csv`.
 
+ 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Logistic Regression | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| Decision Tree | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| kNN | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| Naive Bayes | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| Random Forest | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| SVM | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| Logistic Regression | 0.9825 | 0.9954 | 0.9861 | 0.9861 | 0.9861 | 0.9623 |
+| Decision Tree | 0.9123 | 0.9157 | 0.9559 | 0.9028 | 0.9286 | 0.8174 |
+| kNN | 0.9737 | 0.9884 | 0.9600 | 1.0000 | 0.9796 | 0.9442 |
+| Naive Bayes | 0.9386 | 0.9878 | 0.9452 | 0.9583 | 0.9517 | 0.8676 |
+| Random Forest | 0.9386 | 0.9940 | 0.9577 | 0.9444 | 0.9510 | 0.8689 |
+| SVM | 0.9825 | 0.9950 | 0.9861 | 0.9861 | 0.9861 | 0.9623 |
 
 > Replace the placeholder values in the README with the generated values from `artifacts/metrics.csv` before final submission.
 
