@@ -91,7 +91,6 @@ The table below is populated from `artifacts/metrics.csv`.
 | Random Forest | 0.9386 | 0.9940 | 0.9577 | 0.9444 | 0.9510 | 0.8689 |
 | SVM | 0.9825 | 0.9950 | 0.9861 | 0.9861 | 0.9861 | 0.9623 |
 
-> Replace the placeholder values in the README with the generated values from `artifacts/metrics.csv` before final submission.
 
 ### Observations
 
